@@ -1,4 +1,4 @@
-// import { CONFIG } from "./config.js";
+import { CONFIG } from "./config.js";
 const API_BASE = CONFIG.API_BASE_URL;
 const PRODUCTS_PATH = CONFIG.PRODUCTS_PATH;
 const TOKEN_KEY = CONFIG.TOKEN_KEY;
