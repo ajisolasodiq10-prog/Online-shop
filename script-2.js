@@ -1,3 +1,10 @@
+import { CONFIG } from "./config.js";
+//add backend
+
+const API_BASE = CONFIG.API_BASE_URL;
+const PRODUCTS_PATH = CONFIG.PRODUCTS_PATH;
+const WHATSAPP_LINK_PATH = CONFIG.WHATSAPP_LINK_PATH;
+
 document.addEventListener("DOMContentLoaded", () => {
   const cartButton = document.getElementById("cartButton");
   const cartSection = document.getElementById("cart");
@@ -10,8 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let cart = [];
   let productsData = [];
 
-  // Fetch products from the backend
-  fetch("/api/products")
+  // Fetch products from the backend (configurable via .env)
+  fetch(`${API_BASE}${PRODUCTS_PATH}`)
     .then((response) => response.json())
     .then((data) => {
       productsData = Array.isArray(data) ? data : data.products || [];
@@ -177,7 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }));
 
     try {
-      const response = await fetch("/api/generate-whatsapp-link", {
+      const response = await fetch(`${API_BASE}${WHATSAPP_LINK_PATH}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

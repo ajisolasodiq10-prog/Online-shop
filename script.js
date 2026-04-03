@@ -1,3 +1,6 @@
+// script.js
+import { CONFIG } from "./config.js";
+
 document
   .getElementById("loginForm")
   .addEventListener("submit", async function (event) {
@@ -34,10 +37,9 @@ document
     }
 
     try {
-      // Send login request to the backend (configurable via .env)
-      const cfg = window.APP_CONFIG || {};
-      const apiBase = cfg.API_BASE_URL || "/api";
-      const loginPath = cfg.LOGIN_PATH || "/admin/login";
+      // Send login request to the backend (configurable via config.js)
+      const apiBase = CONFIG.API_BASE_URL;
+      const loginPath = CONFIG.LOGIN_PATH;
       const response = await fetch(`${apiBase}${loginPath}`, {
         method: "POST",
         headers: {

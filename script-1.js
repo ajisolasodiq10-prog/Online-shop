@@ -1,3 +1,8 @@
+import { CONFIG } from "./config.js";
+const API_BASE = CONFIG.API_BASE_URL;
+const PRODUCTS_PATH = CONFIG.PRODUCTS_PATH;
+const TOKEN_KEY = CONFIG.TOKEN_KEY;
+
 document
   .getElementById("productForm")
   .addEventListener("submit", async function (event) {
@@ -38,12 +43,12 @@ document
     };
 
     try {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem(TOKEN_KEY);
       const isUpdate = Boolean(editingProductId);
       const method = isUpdate ? "PUT" : "POST";
       const endpoint = isUpdate
-        ? `/api/products/${editingProductId}`
-        : "/api/products";
+        ? `${API_BASE}${PRODUCTS_PATH}/${editingProductId}`
+        : `${API_BASE}${PRODUCTS_PATH}`;
 
       const response = await fetch(endpoint, {
         method,
@@ -81,7 +86,7 @@ document
 // Function to fetch and render products
 async function fetchAndRenderProducts() {
   try {
-    const response = await fetch("/api/products");
+    const response = await fetch(`${API_BASE}${PRODUCTS_PATH}`);
     if (response.ok) {
       const data = await response.json();
       renderProducts(data.products);
@@ -131,8 +136,8 @@ function renderProducts(products) {
 // Function to edit product
 async function editProduct(id) {
   try {
-    const token = localStorage.getItem("token");
-    const response = await fetch(`/api/products/${id}`, {
+    const token = localStorage.getItem(TOKEN_KEY);
+    const response = await fetch(`${API_BASE}${PRODUCTS_PATH}/${id}`, {
       headers: {
         Authorization: token ? `Bearer ${token}` : "",
       },
@@ -164,8 +169,8 @@ async function editProduct(id) {
 // Function to delete product
 async function deleteProduct(id) {
   try {
-    const token = localStorage.getItem("token");
-    const response = await fetch(`/api/products/${id}`, {
+    const token = localStorage.getItem(TOKEN_KEY);
+    const response = await fetch(`${API_BASE}${PRODUCTS_PATH}/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: token ? `Bearer ${token}` : "",
