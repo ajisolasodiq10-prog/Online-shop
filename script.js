@@ -34,8 +34,11 @@ document
     }
 
     try {
-      // Send login request to the backend
-      const response = await fetch("/api/admin/login", {
+      // Send login request to the backend (configurable via .env)
+      const cfg = window.APP_CONFIG || {};
+      const apiBase = cfg.API_BASE_URL || "/api";
+      const loginPath = cfg.LOGIN_PATH || "/admin/login";
+      const response = await fetch(`${apiBase}${loginPath}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -49,7 +52,7 @@ document
         // Save user info and JWT token
         localStorage.setItem(
           "user",
-          JSON.stringify({ username: data.username, email: data.email }),
+          JSON.stringify({ username: data.username }),
         );
         localStorage.setItem("token", data.token);
 
