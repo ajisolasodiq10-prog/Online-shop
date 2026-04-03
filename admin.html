@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="admin-container">
+      <header>
+        <h1>HP My Store</h1>
+      </header>
+      <header
+        style="
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+          padding: 20px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+        "
+      >
+        <div style="flex: 1; text-align: center">
+          <h1 style="margin: 0; font-size: 2rem">HP My Store</h1>
+          <p style="margin: 5px 0 0; font-size: 1.1rem">
+            Your one-stop shop for quality products
+          </p>
+        </div>
+    </header>
+    <a class="button" href="/dashboard.html">Go to Dashboard</a>
+      <h2>Product Management</h2>
+      <div id="productList" class="product-list">
+        <!-- Products will be rendered here -->
+      </div>
+      <form id="productForm">
+        <div class="input-group">
+          <label for="productName">Product Name</label>
+          <input type="text" id="productName" name="productName" required />
+          <span id="nameError" class="error-message"></span>
+        </div>
+        <div class="input-group">
+          <label for="productPrice">Price</label>
+          <input type="number" id="productPrice" name="productPrice" required />
+          <span id="priceError" class="error-message"></span>
+        </div>
+        <div class="input-group">
+          <label for="productImage">Image URL</label>
+          <input type="url" id="productImage" name="productImage" required />
+          <span id="imageError" class="error-message"></span>
+        </div>
+        <div class="input-group">
+          <label for="productCategory">Category (Optional)</label>
+          <input type="text" id="productCategory" name="productCategory" />
+        </div>
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+    <script src="script-1.js"></script>
+  </body>
+</html>
