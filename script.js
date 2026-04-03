@@ -38,8 +38,8 @@ document
 
     try {
       // Send login request to the backend (configurable via config.js)
-      // const apiBase = CONFIG.API_BASE_URL;
-      // const loginPath = CONFIG.LOGIN_PATH;
+      const apiBase = API_BASE_URL;
+      const loginPath = LOGIN_PATH;
       const response = await fetch(`${apiBase}${loginPath}`, {
         method: "POST",
         headers: {
