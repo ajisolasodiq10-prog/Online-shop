@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let cart = [];
   let productsData = [];
+  //update .env to config.js and import here
 
   // Fetch products from the backend (configurable via .env)
   fetch(`${API_BASE}${PRODUCTS_PATH}`)
