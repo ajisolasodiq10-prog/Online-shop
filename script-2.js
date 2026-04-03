@@ -1,4 +1,4 @@
-import { CONFIG } from "./config.js";
+// import { CONFIG } from "./config.js";
 //add backend
 
 const API_BASE = CONFIG.API_BASE_URL;
