@@ -1,10 +1,10 @@
 /* --- Global base --- */
 :root {
-  --bg: #f3f7fb;
-  --card: #ffffff;
+  --bg: #f7f2f4;
+  --card: #e0d5d5;
   --text: #20232a;
   --muted: #6b7280;
-  --primary: #1d4ed8;
+  --primary: #18099c;
   --primary-dark: #1e40af;
   --success: #16a34a;
   --danger: #dc2626;
@@ -50,7 +50,7 @@ button:hover,
 
 .button {
   background-color: var(--primary);
-  color: white;
+  color: rgb(248, 240, 240);
 }
 
 .button:hover {
@@ -308,7 +308,7 @@ button:hover,
   right: 0;
   width: 300px;
   height: 100%;
-  background-color: #f8f9fa;
+  background-color: #d1d5da;
   padding: 20px;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
 }
@@ -328,8 +328,8 @@ button:hover,
 }
 
 .cart button {
-  background-color: #28a745;
-  color: white;
+  background-color: #08661e;
+  color: rgb(231, 227, 227);
   border: none;
   padding: 10px 20px;
   cursor: pointer;
@@ -367,18 +367,18 @@ button:hover,
 
 #butt {
   padding: 10px 20px;
-  /* background-color: #007bff; */
-  color: #fff;
+  background-color: #007bff;
+  color: #851919;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 13px;
 }
 
   .top-btn {
   padding: 2px 8px;
   /* background-color: #007bff; */
-  color:  #007bff;
+  color:  #4b0996;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -405,12 +405,13 @@ button:hover,
 
 /* The popup box */
 .popup-content {
-  background-color: #fff;
+  background-color: #f3f0f0;
   padding: 20px 30px;
   border-radius: 8px;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 15px rgba(15, 13, 13, 0.3);
   min-width: 250px;
+  color: #e70fc3;
 }
 
 /* Close button */
