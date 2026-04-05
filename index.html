@@ -1,55 +1,67 @@
 <!doctype html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Store</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
+
+
+
   <body>
-    <header
-      style="
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    <header style="
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  ">
+
+      <h1 style="margin: 0; font-size: 2rem;">HP HypePack</h1>
+
+      <p style="margin: 5px 0 10px; font-size: 1.1rem;">
+        Your one-stop shop for quality products
+      </p>
+
+
+      <button class="cartButton" style="
+        background: rgba(255, 255, 255, 0.2);
         color: white;
-        padding: 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-      "
-    >
-      <div style="flex: 1; text-align: center">
-        <h1 style="margin: 0; font-size: 2rem">HP HypePack</h1>
-        <p style="margin: 5px 0 0; font-size: 1.1rem">
-          Your one-stop shop for quality products
-        </p>
-      </div>
-      <div style="display: flex; gap: 10px; align-items: center">
-        <button
-          id="cartButton"
-          style="
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: 1px solid white;
-            font-size: 1.2rem;
-            padding: 8px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-          "
-        >
-          🛒
-        </button>
-        <a
-          class="button"
-          href="/login.html"
-          style="font-size: 0.8rem; padding: 5px 10px; border-radius: 6px"
-        >
+        border: 1px solid white;
+        padding: 8px 12px;
+        font-size: 1.2rem;
+        cursor: pointer;;
+        border-radius: 6px;
+        ">
+        🛒</button>
+
+      <!-- </div> -->
+      <div class="top-right-buttons">
+        <a class="top-btn" href="/login.html" style="font-size: 0.8rem; padding: 5px 10px; border-radius: 6px">
           Admin
         </a>
       </div>
+
+      <!-- Popup Modal -->
+      <div id="popup" class="popup">
+        <div class="popup-content">
+          <p>This is the popup message!</p>
+          <button id="close-btn">Close</button>
+        </div>
+      </div>
     </header>
 
+
     <main>
+
+
+      <div id="loader" class="loader"></div>
       <section id="productList" class="product-list">
         <!-- Products will be rendered here -->
       </section>
@@ -67,7 +79,12 @@
       <button id="checkoutButton">Checkout</button>
     </section>
 
+
+
+    <button class="cartButton" id="butt">🛒</button>
+
     <script type="module" src="config.js"></script>
     <script type="module" src="script-2.js"></script>
   </body>
+
 </html>

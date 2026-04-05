@@ -6,7 +6,10 @@ const PRODUCTS_PATH = CONFIG.PRODUCTS_PATH;
 const WHATSAPP_LINK_PATH = CONFIG.WHATSAPP_LINK_PATH;
 
 document.addEventListener("DOMContentLoaded", () => {
-  const cartButton = document.getElementById("cartButton");
+  const popup = document.getElementById("popup");
+const closeBtn = document.getElementById("close-btn");
+const loader = document.getElementById("loader");
+const cartButtons = document.querySelectorAll(".cartButton");
   const cartSection = document.getElementById("cart");
   const productList = document.getElementById("productList");
   const cartItemsContainer = document.getElementById("cartItems");
@@ -14,30 +17,56 @@ document.addEventListener("DOMContentLoaded", () => {
   const checkoutButton = document.getElementById("checkoutButton");
   const closeCartButton = document.getElementById("closeCartButton");
 
+
   let cart = [];
   let productsData = [];
   //update .env to config.js and import here
 
   // Fetch products from the backend (configurable via .env)
-  fetch(`${API_BASE}${PRODUCTS_PATH}`)
+  
+      loader.style.display = "flex";
+  
+  
+     fetch(`${API_BASE}${PRODUCTS_PATH}`)
     .then((response) => response.json())
     .then((data) => {
+      loader.style.display = "none";
       productsData = Array.isArray(data) ? data : data.products || [];
       renderProducts(productsData);
     })
     .catch((error) => {
+      loader.style.display = "none";
       console.error("Error fetching products:", error);
       alert("Failed to load products.");
     });
 
   // Toggle cart visibility
-  cartButton.addEventListener("click", () => {
+
+
+cartButtons.forEach((button) => {
+  button.addEventListener("click", () => {
     cartSection.style.display =
       cartSection.style.display === "block" ? "none" : "block";
+
     if (cartSection.style.display === "block") {
       renderCart();
     }
   });
+});
+
+
+
+// Close popup when button is clicked
+closeBtn.addEventListener("click", () => {
+  popup.style.visibility = "hidden";
+  popup.style.opacity = "0";
+});
+
+
+
+
+
+
 
   // Close cart
   closeCartButton.addEventListener("click", () => {
@@ -121,6 +150,10 @@ document.addEventListener("DOMContentLoaded", () => {
       quantityElement.textContent = --quantity;
     }
   }
+
+
+
+
 
   // Render cart
   function renderCart() {
