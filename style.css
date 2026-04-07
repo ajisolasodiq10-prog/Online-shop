@@ -43,6 +43,9 @@ button
     background-color 0.2s ease;
 }
 
+.main-content {
+  padding-top: 150px; /* Adjust based on header height */
+}
 button:hover,
 .button:hover {
   transform: translateY(-1px);
@@ -171,7 +174,7 @@ button:hover,
 
 .product-card img {
   width: 100%;
-  height: 180px;
+  height: 100px;
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 0.5rem;
@@ -252,8 +255,8 @@ button:hover,
 }
 
 .cart-item img {
-  width: 50px;
-  height: 50px;
+  width: 20px;
+  height: 40px;
   object-fit: cover;
   border-radius: 6px;
 }
