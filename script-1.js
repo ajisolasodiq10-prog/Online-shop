@@ -82,6 +82,9 @@ document
       alert("An error occurred. Please try again.");
     }
   });
+  // Expose to window so onclick attributes in HTML can reach them
+window.editProduct  = editProduct;
+window.deleteProduct = deleteProduct;
 
 // Function to fetch and render products
 async function fetchAndRenderProducts() {
