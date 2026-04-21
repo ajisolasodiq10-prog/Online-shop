@@ -81,15 +81,13 @@ closeBtn.addEventListener("click", () => {
       productCard.classList.add("product-card");
       productCard.innerHTML = `
         <img src="${product.image || product.imageUrl || ""}" alt="${product.name}">
-        <div class="product-info">
-          <h3>${product.name}</h3>
-          <p>#${product.price?.toFixed ? product.price.toFixed(2) : product.price}</p>
-          <div class="actions">
-            <button class="add-to-cart" data-id="${product._id || product.id}">Add to Cart</button>
-            <button class="decrement" data-id="${product._id || product.id}">-</button>
-            <span class="quantity" id="quantity-${product._id || product.id}">1</span>
-            <button class="increment" data-id="${product._id || product.id}">+</button>
-          </div>
+        <h3>${product.name}</h3>
+        <p>#${product.price?.toFixed ? product.price.toFixed(2) : product.price}</p>
+        <div class="actions">
+          <button class="add-to-cart" data-id="${product._id || product.id}">Add to Cart</button>
+          <button class="decrement" data-id="${product._id || product.id}">-</button>
+          <span class="quantity" id="quantity-${product._id || product.id}">1</span>
+          <button class="increment" data-id="${product._id || product.id}">+</button>
         </div>
       `;
       productList.appendChild(productCard);

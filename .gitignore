@@ -67,3 +67,5 @@ coverage/
 .yarn-integrity
 styles.css
 .styles.css
+scripts.js
+.scripts.js
