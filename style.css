@@ -202,17 +202,18 @@ button:hover,
 }
 
 .product-card .actions {
-  margin-top: auto;
+  margin-top: 0.4rem;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  flex-wrap: nowrap;
+  gap: 0.3rem;
+  align-items: center;
 }
 
 .product-card .actions button {
   flex: 1;
-  min-width: 72px;
-  padding: 0.5rem 0.8rem;
-  font-size: 0.92rem;
+  min-width: 0;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.78rem;
 }
 
 .product-card .actions .add-to-cart {
