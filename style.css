@@ -377,20 +377,22 @@ button:hover,
   right: 40px;
   display: flex;
   flex-direction: column; /* stack buttons vertically */
-  gap: 10px;             /* space between buttons */
+  gap: 10px;           /* space between buttons */
   z-index: 1000;
 }
 
 #butt {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fdf7f7;
+  /* padding: 10px 10px; */
+  padding-bottom: 15px;
+  background-color: #301d1d;
+  color: #fffdfd;
   border: none;
   height: 50px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 13px;
-   font-size: 1.2rem;
+  align-items: center;
+  font-size: 30px;
+   /* font-size: 1.2rem; */
 }
 
   .top-btn {
