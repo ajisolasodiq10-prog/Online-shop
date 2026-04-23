@@ -175,8 +175,8 @@ button:hover,
 }
 
 .product-card img {
-  width: 100px;
-  height: 150px;
+  width: 150px;
+  height: 120px;
   object-fit: contain;
   border-radius: 8px;
   background: #fff;
