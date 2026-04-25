@@ -236,8 +236,8 @@ closeBtn.addEventListener("click", () => {
           products,
           user: {
             name: name.trim(),
-            phone: phone?.trim(),
-            department: department?.trim(),
+            // phone: phone?.trim(),
+            // department: department?.trim(),
           },
         }),
       });
