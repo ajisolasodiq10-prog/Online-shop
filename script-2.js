@@ -79,8 +79,8 @@ closeBtn.addEventListener("click", () => {
     products.forEach((product) => {
       const productCard = document.createElement("div");
       productCard.classList.add("product-card");
-      // productCard.innerHTML = 
       productCard.innerHTML = `
+      productCard.innerHTML = 
   <div class="product-image"
     style="background-image: url('${product.image || product.imageUrl || ""}')">
   </div>
