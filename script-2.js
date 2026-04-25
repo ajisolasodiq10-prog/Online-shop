@@ -78,9 +78,9 @@ closeBtn.addEventListener("click", () => {
     productList.innerHTML = "";
     products.forEach((product) => {
       const productCard = document.createElement("div");
-      productCard.classList.add("product-card");
+      productCard.classList.add("product-card img");
+      // productCard.innerHTML = 
       productCard.innerHTML = `
-      productCard.innerHTML = 
   <div class="product-image"
     style="background-image: url('${product.image || product.imageUrl || ""}')">
   </div>
@@ -96,7 +96,7 @@ closeBtn.addEventListener("click", () => {
       </div>
     </div>
   </div>
-;
+
 
       `;
       productList.appendChild(productCard);
