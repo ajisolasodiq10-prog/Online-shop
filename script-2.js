@@ -28,51 +28,51 @@ const cartButtons = document.querySelectorAll(".cartButton");
       loader.style.display = "flex";
   
   
-    //  fetch(`${API_BASE}${PRODUCTS_PATH}`)
-    // .then((response) => response.json())
-    // .then((data) => {
-    //   loader.style.display = "none";
-    //   productsData = Array.isArray(data) ? data : data.products || [];
-    //   renderProducts(productsData);
-    // })
-    // .catch((error) => {
-    //   loader.style.display = "none";
-    //   console.error("Error fetching products:", error);
-    //   alert("Failed to load products.");
-    // });
+     fetch(`${API_BASE}${PRODUCTS_PATH}`)
+    .then((response) => response.json())
+    .then((data) => {
+      loader.style.display = "none";
+      productsData = Array.isArray(data) ? data : data.products || [];
+      renderProducts(productsData);
+    })
+    .catch((error) => {
+      loader.style.display = "none";
+      console.error("Error fetching products:", error);
+      alert("Failed to load products.");
+    });
 
 
 // TEMP: comment out the fetch and use this
-const demoProducts = [
-  {
-    _id: "1",
-    name: "Plain T-Shirt",
-    price: 5000,
-    image: "https://via.placeholder.com/150"
-  },
-  {
-    _id: "2",
-    name: "Sport Wear",
-    price: 6500,
-    image: "https://via.placeholder.com/150"
-  },
-  {
-    _id: "3",
-    name: "Hoodie",
-    price: 8000,
-    image: "https://via.placeholder.com/150"
-  },
-  {
-    _id: "4",
-    name: "Joggers",
-    price: 4500,
-    image: "https://via.placeholder.com/150"
-  }
-];
+// const demoProducts = [
+//   {
+//     _id: "1",
+//     name: "Plain T-Shirt",
+//     price: 5000,
+//     image: "https://via.placeholder.com/150"
+//   },
+//   {
+//     _id: "2",
+//     name: "Sport Wear",
+//     price: 6500,
+//     image: "https://via.placeholder.com/150"
+//   },
+//   {
+//     _id: "3",
+//     name: "Hoodie",
+//     price: 8000,
+//     image: "https://via.placeholder.com/150"
+//   },
+//   {
+//     _id: "4",
+//     name: "Joggers",
+//     price: 4500,
+//     image: "https://via.placeholder.com/150"
+//   }
+// ];
 
-loader.style.display = "none";
-productsData = demoProducts;
-renderProducts(productsData);
+// loader.style.display = "none";
+// productsData = demoProducts;
+// renderProducts(productsData);
 
   // Toggle cart visibility
 
