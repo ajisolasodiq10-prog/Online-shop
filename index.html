@@ -52,7 +52,7 @@
         </p>
 
 
-        <button class="cartButton" style="
+        <button class="cartButton" aria-label="Cart" style="
     background: rgba(255, 255, 255, 0.2);
     color: rgb(16, 218, 77);
     border: 1px solid white;
@@ -61,7 +61,9 @@
     cursor: pointer;;
     border-radius: 6px;
     ">
-          🛒</button>
+          🛒
+          <span class="badge">0</span>
+        </button>
       </div>
 
 
@@ -112,7 +114,9 @@
 
 
 
-    <button class="cartButton" id="butt">🛒</button>
+    <button class="cartButton" aria-label="Cart" id="butt">🛒
+      <span class="badge">0</span>
+    </button>
 
     <script type="module" src="config.js"></script>
     <script type="module" src="script-2.js"></script>

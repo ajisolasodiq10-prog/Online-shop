@@ -284,6 +284,8 @@ button:hover,
   width: 100%;
   padding: 0.25rem 0.4rem;
   font-size: 0.7rem;
+  background: var(--success);
+  color: white;
 }
 
 .product-card .counter {
@@ -571,3 +573,24 @@ button:hover,
     font-size: 14px;
   }
 }
+
+.cart-badge {
+        position: relative;
+        display: inline-block;
+      }
+
+      .badge {
+        position: absolute;
+        top: -6px;
+        right: -8px;
+        background:green;
+        color: white;
+        font-size: 0.9rem;
+        font-weight: 800;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }

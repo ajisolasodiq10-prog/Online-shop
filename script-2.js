@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const closeBtn = document.getElementById("close-btn");
 const loader = document.getElementById("loader");
 const cartButtons = document.querySelectorAll(".cartButton");
+// const badge = document.querySelectorAll(".badge");
   const cartSection = document.getElementById("cart");
   const productList = document.getElementById("productList");
   const cartItemsContainer = document.getElementById("cartItems");
@@ -27,51 +28,51 @@ const cartButtons = document.querySelectorAll(".cartButton");
       loader.style.display = "flex";
   
   
-     fetch(`${API_BASE}${PRODUCTS_PATH}`)
-    .then((response) => response.json())
-    .then((data) => {
-      loader.style.display = "none";
-      productsData = Array.isArray(data) ? data : data.products || [];
-      renderProducts(productsData);
-    })
-    .catch((error) => {
-      loader.style.display = "none";
-      console.error("Error fetching products:", error);
-      alert("Failed to load products.");
-    });
+    //  fetch(`${API_BASE}${PRODUCTS_PATH}`)
+    // .then((response) => response.json())
+    // .then((data) => {
+    //   loader.style.display = "none";
+    //   productsData = Array.isArray(data) ? data : data.products || [];
+    //   renderProducts(productsData);
+    // })
+    // .catch((error) => {
+    //   loader.style.display = "none";
+    //   console.error("Error fetching products:", error);
+    //   alert("Failed to load products.");
+    // });
 
 
 // TEMP: comment out the fetch and use this
-// const demoProducts = [
-//   {
-//     _id: "1",
-//     name: "Plain T-Shirt",
-//     price: 5000,
-//     image: "https://via.placeholder.com/150"
-//   },
-//   {
-//     _id: "2",
-//     name: "Sport Wear",
-//     price: 6500,
-//     image: "https://via.placeholder.com/150"
-//   },
-//   {
-//     _id: "3",
-//     name: "Hoodie",
-//     price: 8000,
-//     image: "https://via.placeholder.com/150"
-//   },
-//   {
-//     _id: "4",
-//     name: "Joggers",
-//     price: 4500,
-//     image: "https://via.placeholder.com/150"
-//   }
-// ];
+const demoProducts = [
+  {
+    _id: "1",
+    name: "Plain T-Shirt",
+    price: 5000,
+    image: "https://via.placeholder.com/150"
+  },
+  {
+    _id: "2",
+    name: "Sport Wear",
+    price: 6500,
+    image: "https://via.placeholder.com/150"
+  },
+  {
+    _id: "3",
+    name: "Hoodie",
+    price: 8000,
+    image: "https://via.placeholder.com/150"
+  },
+  {
+    _id: "4",
+    name: "Joggers",
+    price: 4500,
+    image: "https://via.placeholder.com/150"
+  }
+];
 
-// loader.style.display = "none";
-// productsData = demoProducts;
-// renderProducts(productsData);
+loader.style.display = "none";
+productsData = demoProducts;
+renderProducts(productsData);
 
   // Toggle cart visibility
 
@@ -112,8 +113,8 @@ closeBtn.addEventListener("click", () => {
     products.forEach((product) => {
       const productCard = document.createElement("div");
       productCard.classList.add("product-card");
+      // productCard.innerHTML = 
       productCard.innerHTML = `
-productCard.innerHTML = 
   <div class="product-image"
     style="background-image: url('${product.image || product.imageUrl || ""}')">
   </div>
@@ -149,6 +150,14 @@ productCard.innerHTML =
     });
   }
 
+function updateCartCount() {
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+  document.querySelectorAll(".badge").forEach((badge) => {
+    badge.textContent = totalItems;
+  });
+}
+
+
   // Handle adding product to cart
   function handleAddToCart(event) {
     const productId = event.target.dataset.id;
@@ -173,7 +182,7 @@ productCard.innerHTML =
 
     // Reset displayed quantity to 1 after adding
     quantityElement.textContent = "1";
-
+    updateCartCount();
     renderCart();
   }
 
@@ -238,6 +247,7 @@ productCard.innerHTML =
   function removeFromCart(productId) {
     cart = cart.filter((item) => item.id !== productId);
     renderCart();
+    updateCartCount();
   }
 
   // Handle checkout
