@@ -40,6 +40,39 @@ const cartButtons = document.querySelectorAll(".cartButton");
       alert("Failed to load products.");
     });
 
+
+// TEMP: comment out the fetch and use this
+// const demoProducts = [
+//   {
+//     _id: "1",
+//     name: "Plain T-Shirt",
+//     price: 5000,
+//     image: "https://via.placeholder.com/150"
+//   },
+//   {
+//     _id: "2",
+//     name: "Sport Wear",
+//     price: 6500,
+//     image: "https://via.placeholder.com/150"
+//   },
+//   {
+//     _id: "3",
+//     name: "Hoodie",
+//     price: 8000,
+//     image: "https://via.placeholder.com/150"
+//   },
+//   {
+//     _id: "4",
+//     name: "Joggers",
+//     price: 4500,
+//     image: "https://via.placeholder.com/150"
+//   }
+// ];
+
+// loader.style.display = "none";
+// productsData = demoProducts;
+// renderProducts(productsData);
+
   // Toggle cart visibility
 
 
@@ -80,13 +113,15 @@ closeBtn.addEventListener("click", () => {
       const productCard = document.createElement("div");
       productCard.classList.add("product-card");
       productCard.innerHTML = `
-      productCard.innerHTML = 
+productCard.innerHTML = 
   <div class="product-image"
     style="background-image: url('${product.image || product.imageUrl || ""}')">
   </div>
   <div class="product-info">
-    <h3>${product.name}</h3>
-    <p>#${product.price?.toFixed ? product.price.toFixed(2) : product.price}</p>
+    <div class="product-text">
+      <h3>${product.name}</h3>
+      <p>#${product.price?.toFixed ? product.price.toFixed(2) : product.price}</p>
+    </div>
     <div class="actions">
       <button class="add-to-cart" data-id="${product._id || product.id}">Add to Cart</button>
       <div class="counter">
@@ -96,7 +131,7 @@ closeBtn.addEventListener("click", () => {
       </div>
     </div>
   </div>
-
+;
 
       `;
       productList.appendChild(productCard);
