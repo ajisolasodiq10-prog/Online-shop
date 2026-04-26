@@ -186,7 +186,7 @@ button:hover,
 
 .product-card img {
   width: 100%;
-  height: 120px;
+  height: 40px;
   object-fit: cover;
   border-radius: 8px;
   background: #fcf9f9;
