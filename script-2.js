@@ -35,12 +35,17 @@ const cartButtons = document.querySelectorAll(".cartButton");
       productsData = Array.isArray(data) ? data : data.products || [];
       renderProducts(productsData);
     })
+
     .catch((error) => {
       loader.style.display = "none";
       console.error("Error fetching products:", error);
       alert("Failed to load products.");
     });
-
+    // Keep-alive ping (add this in your server.js)
+setInterval(() => {
+  fetch(`${API_BASE}${PRODUCTS_PATH}`)
+    .catch(() => {});
+}, 14 * 60 * 1000);
 
 // TEMP: comment out the fetch and use this
 // const demoProducts = [
