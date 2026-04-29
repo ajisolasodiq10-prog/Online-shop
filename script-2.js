@@ -122,6 +122,8 @@ closeBtn.addEventListener("click", () => {
     <div class="product-text">
       <h3>${product.name}</h3>
       <p>#${product.price?.toFixed ? product.price.toFixed(2) : product.price}</p>
+      <h3>${product.category}</h3>
+      
     </div>
     <div class="actions">
       <button class="add-to-cart" data-id="${product._id || product.id}">Add to Cart</button>
@@ -132,7 +134,7 @@ closeBtn.addEventListener("click", () => {
       </div>
     </div>
   </div>
-;
+
 
       `;
       productList.appendChild(productCard);
