@@ -127,8 +127,6 @@ closeBtn.addEventListener("click", () => {
     <div class="product-text">
       <h3>${product.name}</h3>
       <p>#${product.price?.toFixed ? product.price.toFixed(2) : product.price}</p>
-      
-      
     </div>
     <div class="actions">
       <button class="add-to-cart" data-id="${product._id || product.id}">Add to Cart</button>

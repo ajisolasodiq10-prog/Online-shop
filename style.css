@@ -173,6 +173,7 @@ button:hover,
   align-items: flex-start;
   gap: 0.2rem;
   overflow: hidden;
+  box-sizing: border-box;
 }
 .product-image {
   width: 100%;
@@ -284,6 +285,7 @@ button:hover,
   width: 100%;
   padding: 0.25rem 0.4rem;
   font-size: 0.7rem;
+  min-width: 0;
   background: var(--success);
   color: white;
 }
@@ -301,6 +303,7 @@ button:hover,
   height: 24px;
   font-size: 0.8rem;
   padding: 0;
+  flex-shrink: 0;
 }
 
 .product-card .quantity {
@@ -594,3 +597,5 @@ button:hover,
         align-items: center;
         justify-content: center;
       }
+
+      
